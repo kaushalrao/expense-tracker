@@ -16,7 +16,7 @@ import { TabNav } from "@/components/ui/TabNav";
 export default function PlantationPage() {
     const router = useRouter();
     const { user, loginId, language, toggleLanguage, loading: authLoading } = useAuth();
-    const t = PLANTATION_TRANSLATIONS[language];
+    const t = PLANTATION_TRANSLATIONS[language] || PLANTATION_TRANSLATIONS['en']; // Re-applying fix: Prevents crash if language is invalid
 
     const [activeTab, setActiveTab] = useState<'entry' | 'report' | 'history'>('entry');
     const [records, setRecords] = useState<PlantationRecord[]>([]);

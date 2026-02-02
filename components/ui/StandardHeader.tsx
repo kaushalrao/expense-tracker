@@ -3,7 +3,7 @@ import { Home as HomeIcon, Globe } from 'lucide-react';
 import { StandardHeaderProps } from '@/types';
 
 export const StandardHeader = ({ title, subtitle, onBack, language, onToggleLanguage, children }: StandardHeaderProps) => (
-    <div className="bg-slate-900 text-white p-4 rounded-b-3xl shadow-lg sticky top-0 z-10 flex flex-col gap-4">
+    <div className="bg-slate-900 text-white p-4 rounded-b-3xl shadow-lg sticky top-0 z-50 flex flex-col gap-4">
         <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
                 <button onClick={onBack} className="bg-slate-800 p-2 rounded-full hover:bg-slate-700 border border-slate-600 transition-colors">

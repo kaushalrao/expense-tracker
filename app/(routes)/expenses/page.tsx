@@ -58,7 +58,7 @@ export default function ExpensesPage() {
     const [isDeleting, setIsDeleting] = useState<boolean>(false);
 
     const recognitionRef = useRef<any>(null);
-    const t = EXPENSE_TRANSLATIONS[language];
+    const t = EXPENSE_TRANSLATIONS[language] || EXPENSE_TRANSLATIONS['en']; // Re-applying fix: Prevents crash if language is invalid
 
     // Fetch Expenses
     useEffect(() => {

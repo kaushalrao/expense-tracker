@@ -15,7 +15,7 @@ import { TabNav } from "@/components/ui/TabNav";
 export default function StayManagerPage() {
     const router = useRouter();
     const { user, loginId, language, toggleLanguage, loading: authLoading } = useAuth();
-    const t = STAY_TRANSLATIONS[language];
+    const t = STAY_TRANSLATIONS[language] || STAY_TRANSLATIONS['en']; // Re-applying fix: Prevents crash if language is invalid
 
     const [activeTab, setActiveTab] = useState('daily');
     const [workers, setWorkers] = useState<Worker[]>([]);

@@ -64,7 +64,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const storedLang = localStorage.getItem('farm_app_language') as Language;
-            if (storedLang) setLanguageState(storedLang);
+            if (storedLang === 'kn' || storedLang === 'en') {
+                setLanguageState(storedLang);
+            } else {
+                setLanguageState('en'); // Default fallback
+            }
         }
     }, []);
 
