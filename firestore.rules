@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow anyone to read/write to the artifacts collection
+    match /artifacts/{document=**} {
+      allow read, write: if true;
+    }
+    // Allow anyone to read from the categories collection
+    match /categories/{document=**} {
+      allow read, write: if true;
+    }
+    // Allow anyone to read from the expenses collection
+    match /expenses/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
